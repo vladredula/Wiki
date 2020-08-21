@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <title>Search</title>
+    </head>
+    <body class="h-100">
+        <nav class="navbar navbar-expand-sm bg-light navbar-light justify-content-end">
+            <a class="navbar-brand" href="index.html"><img width="92" height="30" src="img/googlelogo.png" alt="googlelogo"></a>
+            <div class="collapse navbar-collapse ml-auto mr-1 flex-grow-0">
+                <ul class="navbar-nav text-right">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Google Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="image_search.html">Image Search</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="row mx-4 mt-3">
+            <div class="col-xl-6">
+                <h5 class="mt-2">Advance Search</h5>
+            </div>
+        </div>
+        <hr>
+        <div class="row mx-4 mt-5">
+            <div class="col-xl-7">
+                <h6>Find pages with...</h6>
+            </div>
+            <!-- <div class="col-xl-5 pl-0">
+                <h6>To do this in the search box.</h6>
+            </div> -->
+        </div>
+
+        <form action="https://google.com/search">
+            <!-- all word search -->
+            <div class="row mx-4 py-2">
+                <div class="col-xl-2">
+                    <label for="allWords" class="col-form-label col-form-label-sm">all these words:</label>
+                </div>
+                <div class="col-xl-5 pl-0">
+                    <input type="text" class="form-control form-control-sm" id="allWords" name="as_q" aria-describedby="allWordsDesc">
+                </div>
+                <!-- <div class="col-xl-5 pl-0">
+                    <small id="allWordsDesc" class="text-muted">
+                        Type the important words: <code class="text-muted">tri-colour rat terrier</code>
+                    </small>
+                </div> -->
+            </div>
+
+            <!-- exact word or phrase search -->
+            <div class="row mx-4 py-2">
+                <div class="col-xl-2">
+                    <label for="exactWords" class="col-form-label col-form-label-sm">this exact word or phrase:</label>
+                </div>
+                <div class="col-xl-5 pl-0">
+                    <input type="text" class="form-control form-control-sm" id="exactWords" name="as_epq" aria-describedby="exactWordsDesc">
+                </div>
+                <!-- <div class="col-xl-5 pl-0">
+                    <small id="exactWordsDesc" class="text-muted">
+                        Put exact words in quotes: <code class="text-muted">"rat terrier"</code>
+                    </small>
+                </div> -->
+            </div>
+            
+            <!-- or between all the words -->
+            <div class="row mx-4 py-2">
+                <div class="col-xl-2">
+                    <label for="eitherOfTheWords" class="col-form-label col-form-label-sm">any of these words:</label>
+                </div>
+                <div class="col-xl-5 pl-0">
+                    <input type="text" class="form-control form-control-sm" id="eitherOfTheWords" name="as_oq" aria-describedby="eitherOfTheWordsDesc">
+                </div>
+                <!-- <div class="col-xl-5 pl-0">
+                    <small id="eitherOfTheWordsDesc" class="text-muted">
+                        Type OR between all the words you want: <code class="text-muted">miniature OR standard</code>
+                    </small>
+                </div> -->
+            </div>
+            
+            <!-- words you don't want -->
+            <div class="row mx-4 py-2">
+                <div class="col-xl-2">
+                    <label for="noneOfTheWords" class="col-form-label col-form-label-sm">none of these words:</label>
+                </div>
+                <div class="col-xl-5 pl-0">
+                    <input type="text" class="form-control form-control-sm" id="noneOfTheWords" name="as_eq" aria-describedby="noneOfTheWordsDesc">
+                </div>
+                <!-- <div class="col-xl-5 pl-0">
+                    <small id="noneOfTheWordsDesc" class="text-muted">
+                        Put a minus sign just before words that you don't want:<br><code class="text-muted">-rodent, -"Jack Russell"</code>
+                    </small>
+                </div> -->
+            </div>
+
+            <div class="row mx-4 py-2">
+                <div class="col-xl-7 text-right">
+                    <button type="submit" class="btn btn-primary btn-sm">Advance Search</button>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>
