@@ -1,39 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <style>
-            /* * {
-                border: solid red 2px;
-            } */
-        </style>
-        <title>Search</title>
-    </head>
-    <body class="h-100">
-        <nav class="navbar navbar-expand-sm bg-light navbar-light justify-content-end">
-            <a class="navbar-brand" href="index.html"><img width="92" height="30" src="img/googlelogo.png" alt="googlelogo"></a>
-            <div class="collapse navbar-collapse ml-auto mr-1 flex-grow-0">
-                <ul class="navbar-nav text-right">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Google Search</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="advance_search.html">Advance Search</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <div class="row p-5">
-            <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center p-5">
-                <form class="justify-content-center" action="https://google.com/search">
-                    <div class="form-group">
-                        <label class="sr-only">Search Google</label>
-                        <input type="hidden" class="form-control" name="tbm" value="isch">
-                        <input type="text" class="form-control" name="q">
-                    </div>
-                    <button type="submit" class="btn btn-light btn-lg">Image Search</button>
-                </form>
-            </div>
-        </div>
-    </body>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="main.css" media="screen" />
+
+    <title>Search</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="advance_search.html">Advance Search</a></li>
+            <li><a href="index.html">Google Search</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <img class="banner" src="img/googlelogo_banner.png">
+        <form action="https://google.com/search">
+            <input type="hidden" name="tbm" value="isch">
+            <input class="bar" type="text" name="q">
+        </form>
+    </div>
+</body>
+
 </html>
