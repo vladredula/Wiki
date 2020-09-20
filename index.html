@@ -4,13 +4,11 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
-    <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">-->
+
     <style>
-        /*
         * {
             border: solid red 1px;
         }
-        */
 
         body {
             height: auto;
@@ -21,6 +19,7 @@
         nav {
             overflow: auto;
             position: relative;
+            height: 35px;
         }
 
         .navlogo {
@@ -34,14 +33,19 @@
         }
 
         ul {
+            list-style: none;
+        }
+        
+        li {
             float: right;
         }
-
-        ul li {
-            list-style: none;
-            margin-left: 5px;
-            margin-right: 3px;
-            display: inline-block;
+        
+        li a {
+            display: block;
+            text-align: center;
+            padding: 10px 10px;
+            text-decoration: none;
+            font-size:14px;
         }
 
         .content {
@@ -64,8 +68,8 @@
     <nav>
         <!--<img class="navlogo" src="img/googlelogo.png">-->
         <ul>
-            <li>Image Search</li>
-            <li>Advance Search</li>
+            <li><a href="#">Image Search</a></li>
+            <li><a href="#">Advance Search</a></li>
         </ul>
     </nav>
     <div class="content">
@@ -77,32 +81,6 @@
             <input type="submit" value="I'm Feeling Lucky">
         </form>
     </div>
-    <!--
-        <nav class="navbar navbar-expand-sm bg-light navbar-light justify-content-end">
-            <a class="navbar-brand" href="index.html"><img width="92" height="30" src="img/googlelogo.png" alt="googlelogo"></a>
-            <div class="collapse navbar-collapse ml-auto mr-1 flex-grow-0">
-                <ul class="navbar-nav text-right">
-                    <li class="nav-item">
-                        <a class="nav-link" href="image_search.html">Image Search</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="advance_search.html">Advance Search</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <div class="row p-5">
-            <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center p-5">
-                <form class="justify-content-center" action="https://google.com/search">
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="q">
-                    </div>
-                    <input type="submit" class="btn btn-light btn-lg" value="Google Search">
-                    <input type="submit" class="btn btn-light btn-lg" name="btnI" value="I'm Feeling Lucky!">
-                </form>
-            </div>
-        </div>
-    -->
 </body>
 
 </html>
