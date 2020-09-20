@@ -38,6 +38,10 @@ li a:hover {
     text-align: center;
 }
 
+.container {
+    position: relative;
+}
+
 .banner {
     height: 92px;
     margin-bottom: 23px;
@@ -47,9 +51,9 @@ li a:hover {
 
 .banner-img {
     color: #4885ed;
-    bottom: 70px;
-    position: absolute;
-    right: 201px;
+    bottom: 45px;
+    position: relative;
+    left: 105px;
 }
 
 .bar {
