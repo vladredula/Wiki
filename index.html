@@ -38,6 +38,10 @@
             color: black;
             font-size:13px;
         }
+        
+        li a:hover {
+            text-decoration: underline;
+        }
 
         .content {
             text-align: center;
@@ -55,6 +59,16 @@
             height: 42px;
             border-radius: 30px;
             border: 1px solid #dcdcdc;
+            padding: 0 30px;
+        }
+        
+        .bar:hover{
+            box-shadow: 1px 1px 8px 1px #dcdcdc;
+        }
+        
+        .bar:focus-within{
+            box-shadow: 1px 1px 8px 1px #dcdcdc;
+            outline:none;
         }
         
         .button {
@@ -66,6 +80,16 @@
             padding: 10px 17px;
             margin: 29px 4px 0px 4px;
             outline: none;
+        }
+        
+        .button:hover{
+            border: 1px solid #c8c8c8;
+            padding: 9px 16px;
+            color: #808080;
+        }
+        .button:focus{
+            border: 1px solid #4885ed;
+            padding: 9px 16px;
         }
 
     </style>
