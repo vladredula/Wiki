@@ -1,15 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <style>
-            /* * {
-                border: solid red 2px;
-            } */
-        </style>
-        <title>Search</title>
-    </head>
-    <body class="h-100">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">-->
+    <style>
+        /*
+        * {
+            border: solid red 1px;
+        }
+        */
+
+        body {
+            height: auto;
+            width: auto;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        nav {
+            overflow: auto;
+            position: relative;
+        }
+
+        .navlogo {
+            height: 30px;
+            width: 92px;
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+
+        ul {
+            float: right;
+        }
+
+        ul li {
+            list-style: none;
+            margin-left: 5px;
+            margin-right: 3px;
+            display: inline-block;
+        }
+
+        .content {
+            text-align: center;
+        }
+
+        .banner {
+            height: 92px;
+            width: 272px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    </style>
+    <title>Search</title>
+</head>
+
+<body>
+    <nav>
+        <!--<img class="navlogo" src="img/googlelogo.png">-->
+        <ul>
+            <li>Image Search</li>
+            <li>Advance Search</li>
+        </ul>
+    </nav>
+    <div class="content">
+        <img class="banner" src="img/googlelogo_banner.png">
+        <form action="https://google.com/search">
+            <input type="text" name="q">
+            <br>
+            <input type="submit" value="Google Search">
+            <input type="submit" value="I'm Feeling Lucky">
+        </form>
+    </div>
+    <!--
         <nav class="navbar navbar-expand-sm bg-light navbar-light justify-content-end">
             <a class="navbar-brand" href="index.html"><img width="92" height="30" src="img/googlelogo.png" alt="googlelogo"></a>
             <div class="collapse navbar-collapse ml-auto mr-1 flex-grow-0">
@@ -29,14 +97,12 @@
                     <div class="form-group">
                         <input type="text" class="form-control" name="q">
                     </div>
-                    <input type="hidden" name="sxsrf" value="ALeKk00QtOFCWYFe-avRi2iWFaHKJ0HvPw:1598010644489">
-                    <input type="hidden" name="source" value="hp">
-                    <input type="hidden" name="ei" value="FLU_X6_KGpT8wAOn3rToAg">
-                    <input type="hidden" name="iflsig" value="AINFCbYAAAAAXz_DJI9iwzLT5VSG1l9kBV8rtZq-AgxA">
                     <input type="submit" class="btn btn-light btn-lg" value="Google Search">
                     <input type="submit" class="btn btn-light btn-lg" name="btnI" value="I'm Feeling Lucky!">
                 </form>
             </div>
         </div>
-    </body>
+    -->
+</body>
+
 </html>
