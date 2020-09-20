@@ -34,6 +34,7 @@ li a:hover {
 }
 
 .content {
+    position: relative;
     text-align: center;
 }
 
@@ -42,6 +43,13 @@ li a:hover {
     margin-bottom: 23px;
     margin-top: 150px;
     width: 272px;
+}
+
+.banner-img {
+    color: #4885ed;
+    bottom: 70px;
+    position: absolute;
+    right: 201px;
 }
 
 .bar {
