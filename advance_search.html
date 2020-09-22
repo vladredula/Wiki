@@ -9,41 +9,45 @@
         .content {
             text-align: left;
         }
+        
+        .container {
+            padding: 25px 45px;
+        }
     </style>
     
     <title>Search</title>
 </head>
 
 <body>
-    <nav>
+    <nav class="advance">
         <ul>
             <li><a href="advance_search.html">Advance Search</a></li>
             <li><a href="image_search.html">Image Search</a></li>
         </ul>
     </nav>
     <div class="content">
-        <div>
-            Advanced Search
+        <div class="container">
+            <div class="header1">Advanced Search</div>
         </div>
         <hr>
-        <div>
-            Find pages with...
+        <div class="container">
+            <div class="header2">Find pages with...</div>
             <table>
                 <tr>
-                    <td>all these words:</td>
-                    <td><input type="text"></td>
+                    <td class="column1">all these words:</td>
+                    <td class="column2"><input class="adv-form" type="text"></td>
                 </tr>
                 <tr>
-                    <td>this exact word or phrase:</td>
-                    <td><input type="text"></td>
+                    <td class="column1">this exact word or phrase:</td>
+                    <td class="column2"><input class="adv-form" type="text"></td>
                 </tr>
                 <tr>
-                    <td>any of these words:</td>
-                    <td><input type="text"></td>
+                    <td class="column1">any of these words:</td>
+                    <td class="column2"><input class="adv-form" type="text"></td>
                 </tr>
                 <tr>
-                    <td>none of these words:</td>
-                    <td><input type="text"></td>
+                    <td class="column1">none of these words:</td>
+                    <td class="column2"><input class="adv-form" type="text"></td>
                 </tr>
             </table>
         </div>
