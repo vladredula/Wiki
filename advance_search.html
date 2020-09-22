@@ -31,25 +31,33 @@
         </div>
         <hr>
         <div class="container">
+            <form action="https://google.com/search">
             <div class="header2">Find pages with...</div>
             <table>
                 <tr>
                     <td class="column1">all these words:</td>
-                    <td class="column2"><input class="adv-form" type="text"></td>
+                    <td class="column2"><input class="adv-form" name="as_q" type="text"></td>
                 </tr>
                 <tr>
                     <td class="column1">this exact word or phrase:</td>
-                    <td class="column2"><input class="adv-form" type="text"></td>
+                    <td class="column2"><input class="adv-form" name="as_epq" type="text"></td>
                 </tr>
                 <tr>
                     <td class="column1">any of these words:</td>
-                    <td class="column2"><input class="adv-form" type="text"></td>
+                    <td class="column2"><input class="adv-form" name="as_oq" type="text"></td>
                 </tr>
                 <tr>
                     <td class="column1">none of these words:</td>
-                    <td class="column2"><input class="adv-form" type="text"></td>
+                    <td class="column2"><input class="adv-form" name="as_eq" type="text"></td>
+                </tr>
+                <tr>
+                    <td class="column1"></td>
+                    <td class="column2" style="text-align: right">
+                        <input class="adv-btn" type="submit" value="Advance Search">
+                    </td>
                 </tr>
             </table>
+            </form>
         </div>
     </div>
 </body>
