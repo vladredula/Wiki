@@ -2,8 +2,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    height: auto;
-    width: auto;
+    margin: 0;
 }
 
 nav {
@@ -12,8 +11,9 @@ nav {
 
 ul {
     list-style: none;
-    margin: 13px 5px 0 5px;
+    margin: 0;
     overflow: hidden;
+    padding: 12px;
 }
 
 li {
@@ -23,7 +23,7 @@ li {
 li a {
     color: black;
     display: block;
-    font-size:13px;
+    font-size: 13px;
     padding: 10px 10px;
     text-align: center;
     text-decoration: none;
@@ -45,23 +45,23 @@ li a:hover {
 .banner {
     height: 92px;
     margin-bottom: 23px;
-    margin-top: 150px;
+    margin-top: 137px;
     width: 272px;
 }
 
 .banner-img {
+    bottom: 22px;
     color: #4885ed;
-    bottom: 45px;
-    position: relative;
     left: 105px;
+    position: relative;
 }
 
 .bar {
     border: 1px solid #dcdcdc;
     border-radius: 30px;
-    height: 42px;
+    height: 44px;
     padding: 0 30px;
-    width: 476px;
+    width: 522px;
 }
 
 .bar:hover {
@@ -88,6 +88,7 @@ li a:hover {
     color: #808080;
     padding: 9px 16px;
 }
+
 .button:focus {
     border: 1px solid #4885ed;
     padding: 9px 16px;
