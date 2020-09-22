@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
 
-* {
-/*    border: solid red 1px;*/
-}
-
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -58,17 +54,14 @@ li a:hover {
 
 .header2 {
     float: left;
-    display: inline-block;
-    min-width: 167px;
-    width: 16%;
     font-size: 16px;
     height: 42px;
+    min-width: 167px;
     vertical-align: middle;
-    padding-top: 21px;
+    width: 16%;
 }
 
 hr {
-    margin: 0;
     border-top: solid #F2F3F4 1px;
 }
 
@@ -80,7 +73,6 @@ table {
 .column1 {
     float: left;
     font-size: 13px;
-    display: inline-block;
     height: 36px;
     line-height: 28px;
     min-width: 167px;
@@ -89,16 +81,15 @@ table {
 
 .column2 {
     float: left;
-    display: inline-block;
-    min-width: 167px;
     min-height: 37px;
+    min-width: 167px;
     width: 50%;
 }
 
 .adv-form {
     border: 1px solid #D9D9D9;
     height: 25px;
-    width: 98%;
+    width: 99%;
 }
 
 .adv-btn {
