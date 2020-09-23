@@ -53,12 +53,16 @@ li a:hover {
 }
 
 .header2 {
-    float: left;
     font-size: 16px;
     height: 42px;
     min-width: 167px;
-    vertical-align: middle;
-    width: 16%;
+    width: 10%;
+}
+
+.header3 {
+    color: #787878;
+    font-size: 12px;
+    font-weight: bold;
 }
 
 hr {
@@ -68,22 +72,28 @@ hr {
 table {
     border: none;
     width: 100%;
+    text-align: left;
 }
 
 .column1 {
-    float: left;
     font-size: 13px;
     height: 36px;
-    line-height: 28px;
     min-width: 167px;
-    width: 16%;
+    width: 10%;
 }
 
 .column2 {
-    float: left;
     min-height: 37px;
     min-width: 167px;
-    width: 50%;
+    width: 36%;
+}
+
+.column3 {
+    color: #787878;
+    font-size: 11px;
+    height: 36px;
+    line-height: 14px;
+    padding-left: 14px;
 }
 
 .adv-form {
