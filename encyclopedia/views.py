@@ -1,12 +1,15 @@
 from django.shortcuts import render
 from markdown import Markdown
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 
 from . import util
 
 
 def index(request):
     return render(request, "encyclopedia/index.html", {
-        "entries": util.list_entries()
+        "entries": util.list_entries(),
+        "search": False
     })
 
 def entry(request, entry):
@@ -31,20 +34,17 @@ def search(request):
         entries = util.list_entries()
         found = []
 
-        query = request.POST["query"]
+        query = request.POST["q"].lower()
+
+        if util.get_entry(query) is not None:
+            return HttpResponseRedirect(reverse("entry", kwargs={'entry': query}))
 
         for entry in entries:
-            if query.lower() == entry.lower():
-                content = util.get_entry(entry)
-                md = Markdown()
-
-                return render(request, "encyclopedia/entry.html", {
-                    "title": entry,
-                    "entry": md.convert(content)
-                })
-            elif query.lower() in entry.lower():
+            if query in entry.lower():
                 found.append(entry)
         
         return render(request, "encyclopedia/index.html", {
-            "entries": found
+            "entries": found,
+            "search": True,
+            "query": query
         })
