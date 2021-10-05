@@ -6,15 +6,19 @@
 
 {% block body %}
     {% if search %}
-    <h1>Searching for "{{ query }}"</h1>
+        <h1>Searching for "{{ query }}"</h1>
     {% else %}
-    <h1>All Pages</h1>
+        <h1>All Pages</h1>
     {% endif %}
 
-    <ul>
+    {% if not entries %}
+        <p>No Entries found</p>
+    {% else %}
+        <ul>
         {% for entry in entries %}
             <li><a href="/wiki/{{ entry }}">{{ entry }}</a></li>
         {% endfor %}
-    </ul>
+        </ul>
+    {% endif %}
 
 {% endblock %}
