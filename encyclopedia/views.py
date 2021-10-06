@@ -1,10 +1,15 @@
+from django.core.files import utils
 from django.shortcuts import render
 from markdown import Markdown
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django import forms
 
 from . import util
 
+class EntryForm(forms.Form):
+    title = forms.CharField(label="Title")
+    content = forms.CharField(widget=forms.Textarea)
 
 def index(request):
     return render(request, "encyclopedia/index.html", {
@@ -46,4 +51,31 @@ def search(request):
         "entries": found,
         "search": True,
         "query": query
+    })
+
+def create(request):
+    if request.method == "POST":
+        form = EntryForm(request.POST)
+
+        if form.is_valid():
+            title = form.cleaned_data["title"]
+            content = form.cleaned_data["content"]
+
+            if util.get_entry(title) is None:
+                util.save_entry(title, content)
+                return HttpResponseRedirect(reverse("entry", kwargs={'entry': title}))
+            else:
+                return render(request, "encyclopedia/create.html", {
+                    "form": form,
+                    "exist": True
+                })
+        else:
+            return render(request, "encyclopedia/create.html", {
+                "form": form,
+                "exist": False
+            })
+
+    return render(request, "encyclopedia/create.html", {
+        "form": EntryForm(),
+        "exist": False
     })
