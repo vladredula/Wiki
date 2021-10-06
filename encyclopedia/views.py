@@ -30,21 +30,20 @@ def entry(request, entry):
     })
 
 def search(request):
-    if request.method == "POST":
-        entries = util.list_entries()
-        found = []
+    entries = util.list_entries()
 
-        query = request.POST["q"].lower()
+    query = request.POST["q"].lower()
 
-        if util.get_entry(query) is not None:
-            return HttpResponseRedirect(reverse("entry", kwargs={'entry': query}))
+    if util.get_entry(query) is not None:
+        return HttpResponseRedirect(reverse("entry", kwargs={'entry': query}))
 
-        for entry in entries:
-            if query in entry.lower():
-                found.append(entry)
-        
-        return render(request, "encyclopedia/index.html", {
-            "entries": found,
-            "search": True,
-            "query": query
-        })
+    found = []
+    for entry in entries:
+        if query in entry.lower():
+            found.append(entry)
+    
+    return render(request, "encyclopedia/index.html", {
+        "entries": found,
+        "search": True,
+        "query": query
+    })
