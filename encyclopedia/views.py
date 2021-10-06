@@ -8,8 +8,8 @@ from django import forms
 from . import util
 
 class EntryForm(forms.Form):
-    title = forms.CharField(label="Title")
-    content = forms.CharField(widget=forms.Textarea)
+    title = forms.CharField(label="Title", widget=forms.TextInput(attrs={'class':'form-control col-lg-5 col-md-6'}))
+    content = forms.CharField(widget=forms.Textarea(attrs={'class':'form-control col-lg-6 col-md-6'}))
 
 def index(request):
     return render(request, "encyclopedia/index.html", {
@@ -67,7 +67,8 @@ def create(request):
             else:
                 return render(request, "encyclopedia/create.html", {
                     "form": form,
-                    "exist": True
+                    "exist": True,
+                    "title": title
                 })
         else:
             return render(request, "encyclopedia/create.html", {
