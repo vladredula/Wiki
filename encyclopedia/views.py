@@ -4,6 +4,7 @@ from markdown import Markdown
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django import forms
+import secrets
 
 from . import util
 
@@ -105,3 +106,9 @@ def edit(request, entry):
             "title": form.fields["title"].initial,
             "edit": form.fields["edit"].initial
         })
+
+def random(request):
+    entries = util.list_entries()
+    entry = secrets.choice(entries)
+    
+    return HttpResponseRedirect(reverse("entry", kwargs={'entry': entry}))
