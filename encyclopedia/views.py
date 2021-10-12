@@ -10,6 +10,7 @@ from . import util
 class EntryForm(forms.Form):
     title = forms.CharField(label="Title", widget=forms.TextInput(attrs={'class':'form-control col-lg-5 col-md-6'}))
     content = forms.CharField(widget=forms.Textarea(attrs={'class':'form-control col-lg-6 col-md-6'}))
+    edit = forms.BooleanField(widget=forms.HiddenInput(), initial=False)
 
 def index(request):
     return render(request, "encyclopedia/index.html", {
@@ -61,7 +62,7 @@ def create(request):
             title = form.cleaned_data["title"]
             content = form.cleaned_data["content"]
 
-            if util.get_entry(title) is None:
+            if (util.get_entry(title) is None or form.cleaned_data["edit"] == True):
                 util.save_entry(title, content)
                 return HttpResponseRedirect(reverse("entry", kwargs={'entry': title}))
             else:
@@ -80,3 +81,27 @@ def create(request):
         "form": EntryForm(),
         "exist": False
     })
+
+def edit(request, entry):
+    content = util.get_entry(entry)
+    title = entry.capitalize()
+    
+    md = Markdown()
+
+    if content is None:
+        return render(request, "encyclopedia/entry.html", {
+            "title": title,
+            "entry": "<h1>Entry not found</h1>"
+        })
+    else:
+        form = EntryForm()
+        form.fields["title"].initial = entry
+        form.fields['title'].widget.attrs['readonly'] = True
+        form.fields["content"].initial = content
+        form.fields["edit"].initial = True
+
+        return render(request, "encyclopedia/create.html", {
+            "form": form,
+            "title": form.fields["title"].initial,
+            "edit": form.fields["edit"].initial
+        })
