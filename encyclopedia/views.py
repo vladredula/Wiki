@@ -1,6 +1,6 @@
 from django.core.files import utils
 from django.shortcuts import render
-from markdown import Markdown
+from markdown2 import Markdown
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django import forms
@@ -28,12 +28,14 @@ def entry(request, entry):
     if content is None:
         return render(request, "encyclopedia/entry.html", {
             "title": title,
-            "entry": "<h1>Entry not found</h1>"
+            "entry": "<h1>Entry not found</h1>",
+            "edit": False
         })
 
     return render(request, "encyclopedia/entry.html", {
         "title": title,
-        "entry": md.convert(content)
+        "entry": md.convert(content),
+        "edit": True
     })
 
 def search(request):
@@ -109,6 +111,14 @@ def edit(request, entry):
 
 def random(request):
     entries = util.list_entries()
+
+    if not entries:
+        return render(request, "encyclopedia/entry.html", {
+            "title": "No Entries found",
+            "entry": "<h1>No entries found</h1>",
+            "edit": False
+        })
+
     entry = secrets.choice(entries)
     
     return HttpResponseRedirect(reverse("entry", kwargs={'entry': entry}))

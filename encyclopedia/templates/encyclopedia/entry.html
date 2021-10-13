@@ -7,5 +7,7 @@
 {% block body %}
     {{ entry|safe }}
 
+    {% if edit %}
     <a class="btn btn-primary" href="/wiki/{{ title|lower }}/edit" role="button">Edit</a>
+    {% endif %}
 {% endblock %}
